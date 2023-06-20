@@ -1,2 +1,4 @@
 SubstitutionCipher/test.py
-SubstitutionCipher/__pycache__
+SubstitutionCipher/__pycache__/
+SubstitutionCipher/dictionary.txt
+SubstitutionCipher/spec_dict.txt

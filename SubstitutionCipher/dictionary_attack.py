@@ -14,7 +14,7 @@
 
 class HackCipher():
     def __init__(self):
-        self._ciphertext_in_words=True
+        self._ciphertext_in_words=True #each word is seperated by space
         self._are_conditions_met=False
         self._filename_for_dictionary="dictionary.txt"
         self._filename_for_arranged_dict="arranged_dict.txt"
