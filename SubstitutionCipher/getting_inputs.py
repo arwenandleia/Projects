@@ -1,6 +1,4 @@
 
-
-
 class SubCipher():
     def __init__(self):
         self.__base_key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
