@@ -1,5 +1,6 @@
 
 from getting_inputs import SubCipher
+from dictionary_attack import HackCipher
 
 def main():
     the_key="GPSJRTEAMKBWIXCNUOFYZVLHDQ"
