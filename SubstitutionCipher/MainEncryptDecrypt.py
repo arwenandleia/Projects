@@ -15,6 +15,8 @@ def main():
     print(cipher)
     print(decoded_text)
 
+    hack_message = HackCipher()
+    
     
 
 

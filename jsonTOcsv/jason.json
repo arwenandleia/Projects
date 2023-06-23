@@ -1,0 +1,22 @@
+[
+        {  
+            "name":       "Thomas",   
+            "salary":      5600000,   
+            "married":    true  
+        },
+        {  
+            "name":       "Bruce",   
+            "salary":      77000000,   
+            "married":    false  
+        },
+        {  
+            "name":       "Clint",   
+            "salary":      2650,   
+            "married":     true  
+        },
+        {  
+            "name":       "Arthur",   
+            "salary":      2650,   
+            "married":     true  
+        }
+    ] 
