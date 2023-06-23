@@ -4,7 +4,7 @@ from dictionary_attack import HackCipher
 
 def main():
     the_key="GPSJRTEAMKBWIXCNUOFYZVLHDQ"
-    the_message="It is impossible for a Man to learn what HE thinks he already knows."
+    the_message="It is impossible for a Man to learn what HE thinks he already knows The truth can be said with silence just as the Flowers serenade the butterflies "
     
     message_one = SubCipher()
     

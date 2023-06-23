@@ -81,3 +81,17 @@ class KeyMappings():
     def show_keys(self):
         for key in self.__keymap:
             print(f"{key} --> {self.__keymap[key]}")
+
+    def decoded_text(self):
+        output_message = ''
+        for each_letter in self.__ciphertext:
+            if each_letter in self.__keymap:
+                list_of_poss_solutions = self.__keymap[each_letter]
+                if len(list_of_poss_solutions)==2:
+                    output_message += self.__keymap[each_letter][1]
+                else:
+                    output_message += '_'
+            else:
+                output_message += each_letter
+            
+        return output_message
