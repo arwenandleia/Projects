@@ -1,8 +1,8 @@
 import json
-#0 Arranged dictionary to word patterns ---DONE
-# FORMAT of DICT = { key=number_of letters : { key=word pattern : [list of words with that patters]  }  } ---DONE
-#1 list of words from ciphertext
-#2 arrange words from longest to shortest
+
+
+
+
 #3 from longest -- search for word pattern and possible matches
 #4 create possible key mappings
 #5 if certainity on one key, update possible keymapping
@@ -14,11 +14,20 @@ class HackCipher():
         self._are_conditions_met=False
         self._filename_for_dictionary="dictionary.txt"
         self._filename_for_arranged_dict="spec_dict.txt"
+        self.__special_dict=None
 
         self._are_conditions_met = self.__dictionary_check()
         if not self._are_conditions_met:
             raise Exception("Dictionary not present or in wrong format")
         
+    def force_decrypt(self,ciphertext):
+        list_of_words_from_cipher = ciphertext.split()
+        list_of_words_from_cipher.sort(key=len,reverse=True) #sorting words form longest to shortest
+        with open(self._filename_for_arranged_dict) as f: #loading special dict into variable
+            self.__special_dict=json.load(f)
+        
+        
+
 
     def __dictionary_check(self):
         is_dictionary_present=False

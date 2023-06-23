@@ -9,14 +9,14 @@ def main():
     message_one = SubCipher()
     
     cipher = message_one.encrypt(the_message,the_key)
-    decoded_text=message_one.decrypt(cipher,the_key)
+    #decoded_text=message_one.decrypt(cipher,the_key)
 
-    print(the_message)
+    #print(the_message)
     print(cipher)
-    print(decoded_text)
+    #print(decoded_text)
 
-    hack_message = HackCipher()
-    
+    #hack_message = HackCipher()
+    #hack_message.force_decrypt(cipher)
     
 
 
