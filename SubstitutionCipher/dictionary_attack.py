@@ -1,4 +1,5 @@
 import json
+from key_mappings import KeyMappings
 
 
 
@@ -21,10 +22,26 @@ class HackCipher():
             raise Exception("Dictionary not present or in wrong format")
         
     def force_decrypt(self,ciphertext):
-        list_of_words_from_cipher = ciphertext.split()
+        ciphertext_to_use = ciphertext.lower()
+        list_of_words_from_cipher = ciphertext_to_use.split()
         list_of_words_from_cipher.sort(key=len,reverse=True) #sorting words form longest to shortest
         with open(self._filename_for_arranged_dict) as f: #loading special dict into variable
             self.__special_dict=json.load(f)
+        
+        keymap_to_use=KeyMappings(ciphertext_to_use)
+
+        for each_word in list_of_words_from_cipher:
+            len_lookup = str(len(each_word))
+            word_pattern = self.__get_word_pattern(each_word)
+            if len_lookup in self.__special_dict:
+                if word_pattern in self.__special_dict[len_lookup]:
+                    list_of_possible_solutions = self.__special_dict[len_lookup][word_pattern].copy()
+                    keymap_to_use.add_key_to_poss_word(each_word,list_of_possible_solutions)
+                    
+        
+        keymap_to_use.reduce_solved_letters()
+        #keymap_to_use.show_keys()
+        print(keymap_to_use.decoded_text())
         
         
 
